@@ -1,58 +1,352 @@
-<p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400" alt="Laravel Logo"></a></p>
+# Laravel Vue Resource Manager
 
-<p align="center">
-<a href="https://github.com/laravel/framework/actions"><img src="https://github.com/laravel/framework/workflows/tests/badge.svg" alt="Build Status"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/dt/laravel/framework" alt="Total Downloads"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/v/laravel/framework" alt="Latest Stable Version"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
-</p>
+A modern resource management application built with **Laravel, Vue.js, and Tailwind CSS**.
 
-## About Laravel
+The project demonstrates how to build a clean, responsive CRUD application using Laravel as the backend and Vue.js as the frontend. It is designed around managing resources through an intuitive interface with create, read, update, and delete functionality.
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
+## ✨ Features
 
-- [Simple, fast routing engine](https://laravel.com/docs/routing).
-- [Powerful dependency injection container](https://laravel.com/docs/container).
-- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
-- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
-- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
-- [Robust background job processing](https://laravel.com/docs/queues).
-- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
+* 📋 Resource management
+* ➕ Create new resources
+* 👀 View resource details
+* ✏️ Edit existing resources
+* 🗑️ Delete resources
+* 🔎 Search and filter resources
+* 📄 Pagination
+* ⚡ Dynamic Vue.js interface
+* 🎨 Modern Tailwind CSS UI
+* 📱 Responsive design
+* 🔄 Laravel + Vue integration
+* 🗄️ MySQL database
+* 🧩 Reusable Vue components
+* 🛡️ Server-side validation
 
-Laravel is accessible, powerful, and provides tools required for large, robust applications.
+## 🛠️ Tech Stack
 
-## Learning Laravel
+### Backend
 
-Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework.
+* **Laravel**
+* **PHP**
+* **MySQL**
+* **Laravel Eloquent ORM**
+* **Laravel Validation**
+* **Laravel Routing**
 
-In addition, [Laracasts](https://laracasts.com) contains thousands of video tutorials on a range of topics including Laravel, modern PHP, unit testing, and JavaScript. Boost your skills by digging into our comprehensive video library.
+### Frontend
 
-You can also watch bite-sized lessons with real-world projects on [Laravel Learn](https://laravel.com/learn), where you will be guided through building a Laravel application from scratch while learning PHP fundamentals.
+* **Vue.js**
+* **Tailwind CSS**
+* **Vite**
+* JavaScript
 
-## Agentic Development
+### Development Tools
 
-Laravel's predictable structure and conventions make it ideal for AI coding agents like Claude Code, Cursor, and GitHub Copilot. Install [Laravel Boost](https://laravel.com/docs/ai) to supercharge your AI workflow:
+* Composer
+* NPM
+* Git
 
-```bash
-composer require laravel/boost --dev
+## 🏗️ Architecture
 
-php artisan boost:install
+The application follows a modern Laravel + Vue architecture:
+
+```text
+┌─────────────────────────────┐
+│          Vue.js             │
+│                             │
+│  Components                 │
+│  Forms                      │
+│  Resource List              │
+│  Resource Details           │
+└──────────────┬──────────────┘
+               │
+               │ HTTP
+               ▼
+┌─────────────────────────────┐
+│          Laravel            │
+│                             │
+│  Routes                     │
+│  Controllers                │
+│  Validation                 │
+│  Models                     │
+└──────────────┬──────────────┘
+               │
+               ▼
+┌─────────────────────────────┐
+│           MySQL             │
+│                             │
+│       Resource Data         │
+└─────────────────────────────┘
 ```
 
-Boost provides your agent 15+ tools and skills that help agents build Laravel applications while following best practices.
+## 📁 Project Structure
 
-## Contributing
+```text
+laravel-vue-resource-manager/
+│
+├── app/
+│   ├── Http/
+│   │   ├── Controllers/
+│   │   └── Requests/
+│   │
+│   └── Models/
+│
+├── database/
+│   ├── migrations/
+│   ├── seeders/
+│   └── factories/
+│
+├── resources/
+│   ├── js/
+│   │   ├── components/
+│   │   ├── pages/
+│   │   └── ...
+│   │
+│   └── css/
+│
+├── routes/
+│   ├── web.php
+│   └── ...
+│
+├── tests/
+│
+├── public/
+├── storage/
+│
+├── composer.json
+├── package.json
+└── vite.config.js
+```
 
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
+## 🔄 CRUD Workflow
 
-## Code of Conduct
+The application demonstrates the complete CRUD lifecycle.
 
-In order to ensure that the Laravel community is welcoming to all, please review and abide by the [Code of Conduct](https://laravel.com/docs/contributions#code-of-conduct).
+### Create
 
-## Security Vulnerabilities
+A user fills in a form and submits a new resource.
 
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
+```text
+Vue Form
+   ↓
+Laravel Route
+   ↓
+Controller
+   ↓
+Validation
+   ↓
+Eloquent Model
+   ↓
+MySQL
+```
 
-## License
+### Read
 
-The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+Resources are retrieved from the database and displayed in the Vue interface.
+
+```text
+MySQL
+   ↓
+Eloquent
+   ↓
+Laravel
+   ↓
+Vue.js
+   ↓
+Resource List
+```
+
+### Update
+
+Existing resources can be edited through the Vue interface.
+
+```text
+Vue Edit Form
+   ↓
+Laravel
+   ↓
+Validation
+   ↓
+Eloquent
+   ↓
+MySQL
+```
+
+### Delete
+
+Resources can be removed from the database.
+
+```text
+Vue
+   ↓
+Laravel
+   ↓
+Eloquent
+   ↓
+MySQL
+```
+
+## 🎨 User Interface
+
+The frontend focuses on a clean and modern user experience.
+
+The interface includes:
+
+* Responsive resource tables/cards
+* Clean forms
+* Action buttons
+* Validation messages
+* Loading states
+* Empty states
+* Confirmation dialogs
+* Responsive layouts
+* Tailwind utility classes
+
+## 🚀 Installation
+
+### 1. Clone the repository
+
+```bash
+git clone https://github.com/InnaTarasyan/laravel-vue-resource-manager.git
+
+cd laravel-vue-resource-manager
+```
+
+### 2. Install PHP dependencies
+
+```bash
+composer install
+```
+
+### 3. Install JavaScript dependencies
+
+```bash
+npm install
+```
+
+### 4. Create the environment file
+
+```bash
+cp .env.example .env
+```
+
+### 5. Generate the application key
+
+```bash
+php artisan key:generate
+```
+
+### 6. Configure the database
+
+Update the database configuration in `.env`:
+
+```env
+DB_CONNECTION=mysql
+DB_HOST=127.0.0.1
+DB_PORT=3306
+DB_DATABASE=resource_manager
+DB_USERNAME=root
+DB_PASSWORD=
+```
+
+### 7. Run migrations
+
+```bash
+php artisan migrate
+```
+
+### 8. Start Laravel
+
+```bash
+php artisan serve
+```
+
+### 9. Start Vite
+
+In another terminal:
+
+```bash
+npm run dev
+```
+
+The application will then be available at:
+
+```text
+http://127.0.0.1:8000
+```
+
+## 🧪 Testing
+
+Run the test suite with:
+
+```bash
+php artisan test
+```
+
+## 📌 What This Project Demonstrates
+
+This project was created to demonstrate practical experience with:
+
+* Laravel application architecture
+* Vue.js frontend development
+* Tailwind CSS
+* CRUD operations
+* Eloquent ORM
+* Database migrations
+* Form validation
+* Laravel routing
+* Vue components
+* HTTP requests
+* Vite
+* Responsive web design
+* Component-based frontend development
+* Clean separation between backend and frontend responsibilities
+
+## 🔮 Future Improvements
+
+Possible improvements include:
+
+* Authentication and user accounts
+* Role-based permissions
+* Advanced filtering
+* Sorting
+* Bulk actions
+* Dashboard with statistics
+* Notifications
+* File/image uploads
+* API integration
+* Automated tests
+* Docker support
+* CI/CD pipeline
+
+## 📸 Screenshots
+
+### Resource List
+
+*Add a screenshot of the resource list here.*
+
+### Create Resource
+
+*Add a screenshot of the create form here.*
+
+### Edit Resource
+
+*Add a screenshot of the edit interface here.*
+
+### Resource Details
+
+*Add a screenshot of the resource details here.*
+
+## 📄 License
+
+This project is open-sourced software licensed under the MIT License.
+
+## 👩‍💻 Author
+
+**Inna Tarasyan**
+
+GitHub:
+https://github.com/InnaTarasyan
+
+---
+
+⭐ If you find this project useful, feel free to star the repository.
